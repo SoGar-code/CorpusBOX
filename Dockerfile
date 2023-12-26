@@ -10,26 +10,22 @@ ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
 # install packages
-RUN python3 -m pip install --upgrade pip
+RUN python -m pip install --upgrade pip
+RUN apt-get update && apt-get install -y gcc python3-dev && apt-get clean && rm -rf /var/lib/apt/lists/*
 COPY ./requirements.txt .
-RUN python3 -m pip wheel --no-cache-dir --no-deps --wheel-dir /usr/src/app/wheels -r requirements.txt
-
+RUN python -m pip wheel --no-cache-dir --wheel-dir /usr/src/app/wheels -r requirements.txt
 
 #########
 # FINAL #
 #########
 FROM python:3.10-slim
 
-COPY --from=builder /usr/src/app/wheels /wheels
-RUN python3 -m pip install --no-cache /wheels/*
+COPY --from=builder /usr/src/app/wheels /wheels/
+RUN apt-get update && apt-get install -y gcc python3-dev && apt-get clean && rm -rf /var/lib/apt/lists/*
+RUN python -m pip install --no-cache /wheels/*
 
-#RUN apt-get update; apt-get install -y git
-
-#Opened ports
-#Jupyter
+#Opened ports: jupyter
 EXPOSE 5000
-#Dash or Uvicorn
-#EXPOSE 80
 
 ENV PYTHONPATH=/app
 
