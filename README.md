@@ -1,6 +1,6 @@
 # CorpusBOX
 
-Multilingual semantic search engine for a corpus of diaries and ego-documents regarding the Boxer rebellion and the Eight-Nation alliance (1900-1901), including multiple languages.
+*Multilingual semantic search engine* for a corpus of diaries and ego-documents regarding the Boxer rebellion and the Eight-Nation alliance (1900-1901), including multiple languages.
 
 ## Main source for the search engine.
 
@@ -23,15 +23,19 @@ The installation of this repository requires Docker (and Docker compose). Moreov
   NB_USER=jovyan
   JUPYTER_TOKEN=791_my_choice_of_token_256
   ```
+  Please choose your own Jupyter Token and note it for use when accessing the Jupyter server (see step 4. below).
 3. Using docker compose, create the required Jupyter server with:
-```commandline
-docker compose up -d
-```
+  ```commandline
+  docker compose up -d
+  ```
+  Depending on your configuration, you may need:
+  * to use `sudo docker compose up -d`
+  * and/or to replace `docker compose` by `docker-compose` in the previous expression.
 4. In your browser, see the contents of the Notebook at:
-```commandline
-http://localhost:5001/lab/tree/home/jovyan/work/app/search_engine_demo.ipynb
-```
-To access the Notebook server, provide the Jupyter token defined in the `.env` file.
+  ```commandline
+  http://localhost:5001/lab/tree/home/jovyan/work/app/search_engine_demo.ipynb
+  ```
+  To access the Notebook server, copy-paste the Jupyter token defined in the `.env` file.
 
 NB: initialisation of the search engine may take a while!
 
@@ -41,4 +45,4 @@ For information regarding the texts used here, please refer to the [CorpusBOX Zo
 
 # Contributing to this project
 
-Feel free to contribute to this project, by creating a pull request merging on the main branch.
+Feel free to contribute to this project, by creating a pull request to merge on the main branch!
