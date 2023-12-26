@@ -1,19 +1,27 @@
-# Notes about this project
+# CorpusBOX
+
+Multilingual semantic search engine for a corpus of diaries and ego-documents regarding the Boxer rebellion and the Eight-Nation alliance (1900-1901), including multiple languages.
 
 ## Main source for the search engine.
 
 https://www.deepset.ai/blog/how-to-build-a-semantic-search-engine-in-python
 
-Disclaimer: installing the repository for the first time requires downloading many packages.
+Disclaimer: installing the repository for the first time requires downloading many packages and could take some time!
 
 ## Using this repository
+
+### Prerequisite
+
+The installation of this repository requires Docker. Moreover, the embedding model used requires significant computation power and available space on the hard drive.
+
+### Steps
 
 1. Download the full repository
 2. Create a new `.env` file including the following fields:
   ```.env
   COMPOSE_PROJECT_NAME=corpus-box
   NB_USER=jovyan
-  JUPYTER_TOKEN=79_my_choice_of_token_256
+  JUPYTER_TOKEN=791_my_choice_of_token_256
   ```
 3. Using docker compose, create the required Jupyter server with:
 ```commandline
@@ -27,12 +35,10 @@ To access the Notebook server, provide the Jupyter token defined in the `.env` f
 
 NB: initialisation of the search engine may take a while!
 
-## Running the script multiple times
-
-* The document store uses both SQL database (saved in the same folder as the notebook) and 
-  embeddings, but the saves are done in different places.
-* If running the script multiple times, then you need to take this into account.
-
 # Sources of the indexed documents
 
-For information regarding the texts used here, please refer to the CorpusBOX library.
+For information regarding the texts used here, please refer to the [CorpusBOX Zotero library](https://www.zotero.org/groups/4808612/corpusbox).
+
+# Contributing to this project
+
+Feel free to contribute to this project, by creating a pull request merging on the main branch.
