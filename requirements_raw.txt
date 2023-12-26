@@ -1,0 +1,3 @@
+jupyterlab
+ipywidgets
+farm-haystack[faiss, inference]

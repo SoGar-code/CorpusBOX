@@ -1,0 +1,15 @@
+version: "2.2"
+
+services:
+  jupyter-lab:
+    build:
+      dockerfile: Dockerfile
+    volumes:
+        - .:/home/${NB_USER}/work
+    ports:
+        - 5001:5000
+    user: root
+    env_file:
+      - ./.env
+    environment:
+      NB_USER: ${NB_USER}
