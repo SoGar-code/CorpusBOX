@@ -12,7 +12,7 @@ Disclaimer: installing the repository for the first time requires downloading ma
 
 ### Prerequisite
 
-The installation of this repository requires Docker. Moreover, the embedding model used requires significant computation power and available space on the hard drive.
+The installation of this repository requires Docker (and Docker compose). Moreover, the embedding model used requires significant computation power and available space on the hard drive.
 
 ### Steps
 
