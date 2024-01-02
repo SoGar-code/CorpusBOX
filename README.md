@@ -14,7 +14,7 @@ Disclaimer: installing the repository for the first time requires downloading ma
 
 The installation of this repository requires Docker (and Docker compose). Moreover, the embedding model used requires significant computation power and available space on the hard drive.
 
-### Steps
+### Installation steps
 
 1. Download the full repository
 2. Create a new `.env` file including the following fields:
@@ -24,6 +24,7 @@ The installation of this repository requires Docker (and Docker compose). Moreov
   JUPYTER_TOKEN=791_my_choice_of_token_256
   ```
   Please choose your own Jupyter Token and note it for use when accessing the Jupyter server (see step 4. below).
+  
 3. Using docker compose, create the required Jupyter server with:
   ```commandline
   docker compose up -d
@@ -38,6 +39,29 @@ The installation of this repository requires Docker (and Docker compose). Moreov
   To access the Notebook server, copy-paste the Jupyter token defined in the `.env` file.
 
 NB: initialisation of the search engine may take a while!
+
+### Shutdown
+
+To save resources, it is possible to shutdown the system using the command line:
+  ```commandline
+  docker compose down
+  ```
+This command line has to be run in the terminal, from the project root folder 
+(typically folder `CorpusBOX`).
+
+### Search engine start
+
+If the search engine has been shutdown following the instructions of the previous section,
+it is possible to start it again using the following command line in the terminal, 
+from the project root folder:
+  ```commandline
+  docker compose up -d
+  ```
+and then see the contents of the Notebook in a browser at:
+  ```commandline
+  http://localhost:5001/lab/tree/home/jovyan/work/app/search_engine_demo.ipynb
+  ```
+NB: see above the installation steps for more details/alternative docker commands.   
 
 # Sources of the indexed documents
 
