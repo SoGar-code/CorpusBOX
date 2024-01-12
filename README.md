@@ -27,10 +27,10 @@ The installation of this repository requires Docker (and Docker compose). Moreov
   
 3. Using docker compose, create the required Jupyter server with:
   ```commandline
-  docker compose up -d
+  docker compose up -d --build
   ```
   Depending on your configuration, you may need:
-  * to use `sudo docker compose up -d`
+  * to use `sudo docker compose up -d --build`
   * and/or to replace `docker compose` by `docker-compose` in the previous expression.
 4. In your browser, see the contents of the Notebook at:
   ```commandline
